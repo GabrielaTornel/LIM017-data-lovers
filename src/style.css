@@ -1,5 +1,4 @@
-header{
-    background-image:url(img/header1.gif );
+header{ 
     display:block;
     margin:auto;
     border-radius: 15px;
@@ -7,16 +6,6 @@ header{
 body{
     background-image:url(img/fondoToto.jpg);
     background-size: cover;
-}
-.container{
-    font-family:"Garamond";
-    font-size:26px;
-    width: 75%;
-    height:max-content;
-    background:rgba(238, 215, 9, 0.459) ;
-    border-radius: 20px;
-    margin:auto;
-    
 }
 .btnFilmsInfo{
     display:flex;
@@ -47,40 +36,79 @@ footer{
     font-size: 20px;
     font-weight: 200;
 }
-.filmsIntro{
+.container{
+    font-family:"Garamond";
+    font-size:26px;
+    width: 80%;
+    height:max-content;
+    background:    rgba(238, 215, 9, 0.459) ;
+
+    border-radius: 20px;
+    margin:auto;
+    
+}
+
+.cardContainer{
+    width: 320px;
+    height: 320px;
+    margin:10px;
+    display: inline-block;
+
+}
+.cardInner{
+    margin: 5px;
+    width: 280px;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.cardContainer:hover .cardInner {
+    transform: rotateY(180deg);
+  }
+  
+  .cardFront, .cardBack{
+    position: absolute;
     width: 100%;
-    max-width: 1200px;
-    height: 430px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-}
-
- .card{
-    width: 330px;
-    border-radius: 8px;
-    box-shadow: 0 4px 4px rgb(28, 31, 29);
-    overflow: hidden;
-    margin: 20px ;
-    text-align: center;
-    transition: all 0.25s;
-}
-
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .cardFront{
+    background-color: rgba(102, 52, 45, 0.295);
+    color: black;
+  }
+  
+  .cardBack{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transform: rotateY(180deg);
+  }
 .filmsTitle{
+    font-size: 30px;;
+	color: #000000c5;
     text-align: center;
-    font-size: 40px;
-    color: #6a6a6a;
-    margin-top: 100px;
-    font-weight: 100;
-    font-family: 'Roboto', sans-serif;
+    margin: 3px;
 }
 
-.filmsIntro .card:hover{
 
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0,0,0,0.2);
-}
 .poster{
-    width: 300px;
+    width: 150px;
+    border-radius: 3px;
+}
+.filmsDescription{
+    text-align: center;
+    font-size:15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 20px;
+	
+}
+.filmsYear{
+    font-size: 20px;
+	color: #000000c5;
+    text-align: center;
+    margin: 3px;
 }

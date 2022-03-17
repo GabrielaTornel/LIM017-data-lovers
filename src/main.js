@@ -28,27 +28,20 @@ let myArray = data.films;
 
 myArray.forEach((displayAllData) => {
   document.getElementById("filmsInfo").innerHTML += `
-  <div class="card">
+  <div class="cardContainer">
+  <div class="cardInner">
+  <div class="cardFront">
+  <img class="poster" src="${displayAllData.poster}">
   <div class="filmsTitle"> Title: ${displayAllData.title}</div>
   <br>
+  <div class="filmsYear"> Year: ${displayAllData.release_date} ⭐ ${displayAllData.rt_score} 
+  </div>
+  </div>
+  <div class="cardBack">
   <div class="filmsDescription"> Description: ${displayAllData.description}</div>
-  <img class="poster" src="${displayAllData.poster}">
    <br>
+  </div>
+  </div>
   </div>
   `
     })
-
-
-
-
-
-
-
-
-  
-
-//'<li>'+index.people+' '+index.people+'</li>'
-/*console.log(data);
-console.log(dataMovies)
-*/
-
