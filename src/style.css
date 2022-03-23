@@ -1,13 +1,40 @@
-header{ 
+header{
     display:block;
     margin:auto;
-    border-radius: 15px;
 }
 body{
-    background-image:url(img/fondoToto.jpg);
+    background-image:url(img/fondott.gif);
+    background-attachment: fixed;
+    background-position:left;
+    margin:0;
     background-size: cover;
 }
-.btnFilmsInfo{
+ .container{
+    font-family:"Garamond";
+    font-size:26px;
+    width: 75%;
+    border-radius: 20px;
+    margin:auto;
+    margin-left: 13% ;
+} 
+h1{
+    text-align: center;
+    margin-left: 10%;
+    font-size:60px;
+    color:black;
+    text-shadow:4px 2px 4.5px #cca872;
+    -webkit-text-stroke:1px #cca872;
+}
+ p{
+    margin: 15px;
+    /*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+   font-family: Arial, Helvetica, sans-serif;
+} 
+.img-responsive{
+    width: 100%;
+    height: auto;
+}
+.btnFilmsInfo {
     display:flex;
     justify-content:center;
 }
@@ -27,6 +54,106 @@ body{
     cursor: pointer;
 }
 
+.cardContainer {
+    width: 320px;
+    height: 400px;
+    margin: 15px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.labelSort{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    margin-left: 3px ;
+}
+.boxSortAZ{
+    width: 96%;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    background:#A19D7A;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+
+}
+.sortClass{
+	display: inline-block;
+	width: 17%;
+    height: 35px;
+    margin-top:2px;
+	cursor: pointer;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #ffffff;
+	font-size: 17px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+.cardInner{
+    margin: 5px;
+    width: 280px;
+    height: 100%;
+    background:pink;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 1px 2px 0 rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.cardContainer:hover .cardInner {
+    transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+.cardFront {
+    background-color:rgba(102, 52, 45, 0.295);
+    color: black;
+}
+
+.cardBack {
+    background-color:pink;
+    transform: rotateY(180deg);
+    box-shadow:0 1px 2px 0 rgb(0, 0, 0);
+}
+.poster{
+    width: 200px;
+    border-radius: 3px;
+    margin:10px;
+}
+.filmsTitle{
+    font-size:20px;
+	color: #000000c5;
+    text-align: center;
+    margin: 3px;
+    font-weight: 30;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.filmsYear{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+}
+.cardTextBack{
+    text-align: center;
+    font-size:15px;
+    color:black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px;
+}
 footer{
     display: flex;
     align-items:flex-end;
@@ -36,79 +163,6 @@ footer{
     font-size: 20px;
     font-weight: 200;
 }
-.container{
-    font-family:"Garamond";
-    font-size:26px;
-    width: 80%;
-    height:max-content;
-    background:    rgba(238, 215, 9, 0.459) ;
-
-    border-radius: 20px;
-    margin:auto;
-    
-}
-
-.cardContainer{
-    width: 320px;
-    height: 320px;
-    margin:10px;
-    display: inline-block;
-
-}
-.cardInner{
-    margin: 5px;
-    width: 280px;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
-    border-radius: 5px;
-}
-.cardContainer:hover .cardInner {
-    transform: rotateY(180deg);
-  }
-  
-  .cardFront, .cardBack{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .cardFront{
-    background-color: rgba(102, 52, 45, 0.295);
-    color: black;
-  }
-  
-  .cardBack{
-    background-color: rgb(0, 0, 0);
-    color: white;
-    transform: rotateY(180deg);
-  }
-.filmsTitle{
-    font-size: 30px;;
-	color: #000000c5;
-    text-align: center;
-    margin: 3px;
-}
 
 
-.poster{
-    width: 150px;
-    border-radius: 3px;
-}
-.filmsDescription{
-    text-align: center;
-    font-size:15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 20px;
-	
-}
-.filmsYear{
-    font-size: 20px;
-	color: #000000c5;
-    text-align: center;
-    margin: 3px;
-}
+

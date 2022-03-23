@@ -12,8 +12,8 @@
  </head>
   <body>
     <header><img src="img/header1.gif" width="100%" alt="totorolindo"></header>
-    <div class="container">
-      <div class="containerTwo"></div>
+    <br>
+    <div class="container"> 
       <div  id="pageOne" class="info">
         <table>
         <tr>
@@ -25,7 +25,7 @@
         <p>Debido a la fama de los estudios se abrió en las afueras de Tokio el Museo Ghibli.</p>
       </td>
       <td>
-        <img class="img-responsive" src="img/mundoHayaoOk.jpg" alt="HayaoMiyasaki" width="550px">
+        <img class="img-responsive" src="img/hayaoImg.png" alt="HayaoMiyasaki" width="700px">
       </td>
       </tr>
       </table>
@@ -35,14 +35,23 @@
      </div>
       <div id="pageTwo" style="display:none" class="pageTwo">
       <h1>Mas sobre las peliculas</h1>
+      <div class="boxSortAZ">
+        <label style="text-align:left">Ordenar por</label>
+        <select id="selectSortAZ" class="sortClass">
+          <option value="defectoInicial"> Por defecto</option>
+          <option value="A-Z">A-Z </option>
+          <option value="Z-A">Z-A </option>
+          <option value="sortDateAsc">Más antiguas a recientes </option>
+          <option value="sortDateDes">Más recientes a antiguas</option>
+          </select>
+        </div>
       <div id="filmsInfo"></div>
-      <br>
+            <br>
       <div class="btnIntro">
         <button id="backIntro">Volver al inicio </button>
       </div>
     </div>
   </div>
-</div>
     <script src="main.js" type="module"></script>
     <br><br>
     <footer>© Todos lo derechos reservados 2022 </footer>
