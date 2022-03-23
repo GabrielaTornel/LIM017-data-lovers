@@ -24,6 +24,7 @@ pageTwo.style.display="none";
 
 let myArray = data.films;
 
+
 //nombrando nuestra lista recorrida
 const totalDataFilms = (listData) =>{
   let listTitlePrueba = "";
