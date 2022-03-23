@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    <link>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
  </head>
+ 
   <body>
-    <header><img src="img/header1.gif" width="100%" alt="totorolindo"></header>
+    <header><img src="img/header1.gif" alt="totorolindo"></header>
     <br>
     <div class="container"> 
       <div  id="pageOne" class="info">
@@ -25,7 +25,7 @@
         <p>Debido a la fama de los estudios se abrió en las afueras de Tokio el Museo Ghibli.</p>
       </td>
       <td>
-        <img class="img-responsive" src="img/mundoHayaoOk.jpg" alt="HayaoMiyasaki" width="550px">
+        <img class="img-responsive" src="img/hayaoImg.png" alt="HayaoMiyasaki" width="700px">
       </td>
       </tr>
       </table>
@@ -36,15 +36,15 @@
       <div id="pageTwo" style="display:none" class="pageTwo">
       <h1>Mas sobre las peliculas</h1>
       <div class="boxSortAZ">
-      <label>Ordenar por</label>
-      <select id="selectSortAZ">
-        <option value=""> Por defecto</option>
-        <option value="A-Z">A-Z </option>
-        <option value="Z-A">Z-A</option>
-        <option value="nuevas">Más recientes </option>
-        <option value="antiguas">más antiguas</option>
-        </select>
-      </div>
+        <label style="text-align:left">Ordenar por</label>
+        <select id="selectSortAZ" class="sortClass">
+          <option value="defectoInicial"> Por defecto</option>
+          <option value="A-Z">A-Z </option>
+          <option value="Z-A">Z-A </option>
+          <option value="sortDateAsc">Más antiguas a recientes </option>
+          <option value="sortDateDes">Más recientes a antiguas</option>
+          </select>
+        </div>
       <div id="filmsInfo"></div>
             <br>
       <div class="btnIntro">

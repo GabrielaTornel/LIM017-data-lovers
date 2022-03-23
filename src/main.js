@@ -1,8 +1,8 @@
 import {sortMovies} from './data.js';
 import data from './data/ghibli/ghibli.js';
 console.log (data);
-// console.log(dataMovies);
 
+console.log (sortMovies)
 
 let bttnMoreInf = document.getElementById("bttnMoreInf");
 bttnMoreInf.addEventListener("click",()=>{
@@ -22,40 +22,62 @@ pageTwo.style.display="none";
 })
 
 
-// import data from './data/rickandmorty/rickandmorty.js';
-
 let myArray = data.films;
 
-//let myList = "";
-// let yearOrden = document.getElementById("yearOrden");
-// yearOrden.addEventListener("click",()=>{
-// const moviesOrden= sortMovies(data.films);
-// console.log(moviesOrden);
-// })
 
-myArray.forEach((displayAllData) => {
-  document.getElementById("filmsInfo").innerHTML += `
+//nombrando nuestra lista recorrida
+const totalDataFilms = (listData) =>{
+  let listTitlePrueba = "";
+//recorriendo nuestro array
+listData.forEach((myArray) => {
+  const dataCard = `
   <div class="cardContainer">
   <div class="cardInner">
   <div class="cardFront">
-  <img class="poster" src="${displayAllData.poster}">
-   <div class="filmsTitle"> ${displayAllData.title}</div>
-   <div class="filmsYear"> Year: ${displayAllData.release_date} <span>  ⭐ ${displayAllData.rt_score}</span> 
+  <img class="poster" src="${myArray.poster}">
+   <div class="filmsTitle"> ${myArray.title}</div>
+   <div class="filmsYear"> Year: ${myArray.release_date} <span>  ⭐ ${myArray.rt_score}</span> 
    </div>
   </div>
   <div class="cardBack">
   <div class="cardTextBack">
-  Director:  ${displayAllData.director}
-  <br>
-  Description: ${displayAllData.description}
+  Director:  ${myArray.director}
+  <br> <br>
+  Description: ${myArray.description}
   </div>
    </div>
    </div>
    </div> 
-  `
-    })
+  `;
+  listTitlePrueba += dataCard ;
+    });
+    document.getElementById("filmsInfo").innerHTML= listTitlePrueba;
+  }
+  totalDataFilms(myArray);
 
-    
-// let sortedInfo= document.getElementById("selectSortAZ");
-// sortedInfo.addEventListener("change",)
+  // Mostrar Funcion Sort con Select 
+ /* console.log(sortMovies(myArray, "title", "A-Z"))
+  console.log(sortMovies(myArray, "release_date" , "sortDateAsc"))*/
 
+
+
+  /*let pruebaT = document.getElementsByClassName("sortClass").value ;
+  document.getElementById('selectSortAZ').addEventListener('change',  () => {     //querySelector
+              //
+  });*/
+ document.getElementById('selectSortAZ').addEventListener('change', (e) => {
+  const selectedIndex = e.currentTarget.value;
+  //debugger 
+  // sortBy.options[sortBy.selectedIndex].value;
+  if (selectedIndex === "A-Z") {
+    totalDataFilms(sortMovies(myArray, 'title', 'A-Z'));
+  }if (selectedIndex === "Z-A") {
+    totalDataFilms(sortMovies(myArray, 'title', "Z-A"));
+  }if (selectedIndex === "sortDateAsc") {
+    totalDataFilms(sortMovies(myArray, "release_date", "sortDateAsc"));
+  }if (selectedIndex === "sortDateDes") {
+    totalDataFilms(sortMovies(myArray, "release_date", "sortDateDes"));
+  }else{
+ return totalDataFilms(myArray);
+  }
+});

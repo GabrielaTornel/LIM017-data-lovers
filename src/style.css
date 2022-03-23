@@ -3,29 +3,32 @@ header{
     margin:auto;
 }
 body{
-    background-image:url(img/fondoToto.jpg);
+    background-image:url(img/fondott.gif);
+    background-attachment: fixed;
+    background-position:left;
     margin:0;
     background-size: cover;
 }
-.container{
-    font-family:"Garamond";
+
+ .container{
     font-size:26px;
     width: 75%;
-    height:max-content;
-    background:rgba(238, 215, 9, 0.459) ;
     border-radius: 20px;
-    margin: auto;
-}
+    margin:auto;
+    margin-left: 13% ;
+} 
 h1{
     text-align: center;
+    margin-left: 10%;
     font-size:60px;
     color:black;
     text-shadow:4px 2px 4.5px #cca872;
     -webkit-text-stroke:1px #cca872;
 }
-/* p{
-    margin: 20px;
-} */
+ p{
+    margin: 15px;
+    /*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+} 
 .img-responsive{
     width: 100%;
     height: auto;
@@ -53,16 +56,49 @@ h1{
 .cardContainer {
     width: 320px;
     height: 400px;
-    margin: 35px;
+    margin: 15px;
+    margin-left: 10px;
     display: inline-block;
-    /*flex-direction: column;
-    gap: 50px;
-    flex-wrap: wrap;
-    margin-top: 30px; */
+}
+.labelSort{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    margin-left: 3px ;
+}
+.boxSortAZ{
+    width: 96%;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    background:#A19D7A;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+
+}
+.sortClass{
+	display: inline-block;
+	width: 17%;
+    height: 35px;
+    margin-top:2px;
+	cursor: pointer;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #ffffff;
+	font-size: 17px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
 }
 .cardInner{
-    margin: 10px;
-    width: 290px;
+    margin: 5px;
+    width: 280px;
     height: 100%;
     background:pink;
     text-align: center;
@@ -104,17 +140,17 @@ h1{
     text-align: center;
     margin: 3px;
     font-weight: 30;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .filmsYear{
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
 }
 .cardTextBack{
     text-align: center;
     font-size:15px;
     color:black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 20px;
 }
 footer{
