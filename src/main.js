@@ -1,6 +1,8 @@
-import {sortMovies} from './data.js';
+import {sortMovies , filterByGender} from './data.js';
+import {} from './data.js';
 import data from './data/ghibli/ghibli.js';
 console.log (data);
+console.log(filterByGender)
 
 console.log (sortMovies)
 
@@ -24,7 +26,6 @@ pageTwo.style.display="none";
 
 let myArray = data.films;
 
-
 //nombrando nuestra lista recorrida
 const totalDataFilms = (listData) =>{
   let listTitlePrueba = "";
@@ -42,7 +43,7 @@ listData.forEach((myArray) => {
   <div class="cardBack">
   <div class="cardTextBack">
   Director:  ${myArray.director}
-  <br> <br>
+  <br>
   Description: ${myArray.description}
   </div>
    </div>
@@ -55,16 +56,28 @@ listData.forEach((myArray) => {
   }
   totalDataFilms(myArray);
 
-  // Mostrar Funcion Sort con Select 
+  //concatenamos arrays para llegar a gender de people
+ let peopleValue=[];
+ for (let element of myArray) {
+peopleValue.push(element.people);
+ }
+ let listOfPeople = peopleValue[0];
+for (let i=1; i<peopleValue.length; i++){
+  listOfPeople = listOfPeople.concat(peopleValue[i]);
+}
+let peopleGender=[];
+ for (let element of listOfPeople) {
+peopleGender.push(element.gender);
+ }
+
+ const genderArr= new Set(peopleGender);
+let result = [...genderArr];
+console.log(result);
+console.log(filterByGender(genderArr, "female"));
+
+//console.log(listOfPeople); //Este array contiene todos los personajes
  /* console.log(sortMovies(myArray, "title", "A-Z"))
   console.log(sortMovies(myArray, "release_date" , "sortDateAsc"))*/
-
-
-
-  /*let pruebaT = document.getElementsByClassName("sortClass").value ;
-  document.getElementById('selectSortAZ').addEventListener('change',  () => {     //querySelector
-              //
-  });*/
  document.getElementById('selectSortAZ').addEventListener('change', (e) => {
   const selectedIndex = e.currentTarget.value;
   //debugger 
