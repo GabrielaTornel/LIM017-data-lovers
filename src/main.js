@@ -24,7 +24,6 @@ pageTwo.style.display="none";
 
 let myArray = data.films;
 
-
 //nombrando nuestra lista recorrida
 const totalDataFilms = (listData) =>{
   let listTitlePrueba = "";
@@ -42,7 +41,7 @@ listData.forEach((myArray) => {
   <div class="cardBack">
   <div class="cardTextBack">
   Director:  ${myArray.director}
-  <br> <br>
+  <br>
   Description: ${myArray.description}
   </div>
    </div>
@@ -54,6 +53,17 @@ listData.forEach((myArray) => {
     document.getElementById("filmsInfo").innerHTML= listTitlePrueba;
   }
   totalDataFilms(myArray);
+
+  //concatenamos arrays para llegar a gender de people
+ let peopleValue=[];
+ for (let element of myArray) {
+peopleValue.push(element.people);
+ }
+ let listOfPeople = peopleValue[0];
+for (let i=1; i<peopleValue.length; i++){
+  listOfPeople = listOfPeople.concat(peopleValue[i]);
+}
+console.log(listOfPeople); //Este array contiene todos los personajes.
 
   // Mostrar Funcion Sort con Select 
  /* console.log(sortMovies(myArray, "title", "A-Z"))

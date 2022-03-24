@@ -36,3 +36,8 @@ export const sortMovies = (dataFilms, sortBy, sortOrder) => {
     }
   return orderSelectF;
 }
+
+let filteredData=[];
+let filteredData = filtered.filter(function(element){
+  return element.id ==gender.male;
+})
