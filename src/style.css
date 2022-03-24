@@ -53,12 +53,12 @@ h1{
     cursor: pointer;
 }
 
-.cardContainer {
+.cardContainer, .cardContainerPeople{
     width: auto;
     height: 500px;
     display: inline-block;
 }
-.boxSortAZ{
+.boxSelect{
     width: 100%;
     height: 40px;
     margin-left: 0;
@@ -72,11 +72,12 @@ h1{
     transition: all 0.25s ease;
 }
 
-.sortClass{
+.sortClass, .selectGenderXY{
 	display: inline-block;
 	width: 17%;
     height: 35px;
     margin-top:2px;
+    margin-left:5px;
 	cursor: pointer;
   	outline: 0; 
   	border: 0;
