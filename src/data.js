@@ -34,8 +34,9 @@ export const sortMovies = (dataFilms, sortBy, sortOrder) => {
       })
     }
     }
-  return orderSelectF;
+return orderSelectF;
 }
+
 
 /*medio confuso,por terminar-attempt 1
 export const filterData = (data, condition) => {
@@ -69,4 +70,15 @@ if(genderData === "Female"){
     };
     
   //let nuevoArreglo = arreglo.filter(callback); => metodo 1arreglo vacio = array al cual se le aplica y callback funcion que se le aplica a cada elemento del arreglo
+
+export const filterByGender = (dataFilms, genderData) => {
+  const filterData= dataFilms.filter((films) => films.people.gender === genderData
+);
+if(genderData === "Female")
+
+return filterData;
+  };
+  
+//let nuevoArreglo = arreglo.filter(callback); => metodo 1arreglo vacio = array al cual se le aplica y callback funcion que se le aplica a cada elemento del arreglo
+
 
