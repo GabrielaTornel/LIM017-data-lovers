@@ -13,12 +13,12 @@
   <body>
     <header><img src="img/header1.gif" width="100%" alt="totorolindo"></header>
     <br>
-    <div class="container"> 
+    <div class="container">
       <div  id="pageOne" class="info">
         <table>
         <tr>
           <td>
-          <h1>La magia de Studio Ghibli</h1>
+          <h1>Studio Ghibli and its magic</h1>
           <p>Es un estudio cinematográfico de animación japonesa conocido por sus largometrajes y grandes éxitos .Fundado en 1985, dirigido por el galardonado director Hayao Miyazaki, y hasta 2018 estuvo dirigido por Miyazaki junto a su amigo y mentor, Isao Takahata, fallecido en ese año. </p>
           <p>Hayao Miyazaki ,director de cine de animación, productor, animador y co-fundador de Studio Ghibli,describe las historias de sus películas como fantásticas llenas de sentimientos y experiencias y diseñadas para tocar el corazón de incluso los más grandes de la familia.</p>
           <p>Seis de las películas de Studio Ghibli se encuentran entre las 10 películas de anime más taquilleras realizadas en Japón.Cinco de las películas de Studio Ghibli han recibido nominaciones al Óscar. El Viaje de Chihiro ganó el Oso de Oro en 2002 y el Premio de la Academia a la Mejor Película de Animación en 2003.</p>
@@ -30,29 +30,39 @@
       </tr>
       </table>
       <div class="btnFilmsInfo">
-        <button id="bttnMoreInf">Información de Películas </button>
+        <button id="bttnMoreInf">Movies information </button>
       </div>
      </div>
       <div id="pageTwo" style="display:none" class="pageTwo">
-      <h1>conect to maggic Mágia que existe en cada historia de Studio Ghibli.</h1>
-      <div class="boxSortAZ">
+
+      <h1>Connect to the Studio Ghibli magic by its movies</h1>
+      <div class="boxSelect">
+
         <select id="selectSortAZ" class="sortClass">
-           <option value="empty" disabled selected>Order by</option>
+         <option value="empty" disabled selected>Order movies by</option>
           <option value="A-Z">A-Z </option>
           <option value="Z-A">Z-A </option>
-          <option value="sortDateAsc">Más antiguas a recientes </option>
-          <option value="sortDateDes">Más recientes a antiguas</option>
+          <option value="sortDateAsc">Older to new </option>
+          <option value="sortDateDes">New to old</option>
           </select>
-        </div>
+         <select id="selectGender" class="selectGenderXY">
+            <option value="empty" disabled selected>People by gender</option>
+            <option value="Male">Male </option>
+            <option value="Female">Female</option>
+            <option value="NA">Not defined </option>
+            <option value="unknow">Unknown (Possible Male)</option>
+            </select>
+          </div>
       <div id="filmsInfo"></div>
+      <div id="filmsPeopleCard"></div>
             <br>
       <div class="btnIntro">
-        <button id="backIntro">Volver al inicio </button>
+        <button id="backIntro">Back to Home</button>
       </div>
     </div>
-  </div>
+    </div>
     <script src="main.js" type="module"></script>
     <br><br>
-    <footer>© Todos lo derechos reservados 2022 </footer>
+    <footer> Created by Silvia-Gaby ♥ || ©  All right reserved 2022 </footer>
   </body>
 </html>

@@ -1,5 +1,4 @@
 import {sortMovies , filterByGender} from './data.js';
-import {} from './data.js';
 import data from './data/ghibli/ghibli.js';
 console.log (data);
 console.log(filterByGender)
@@ -24,73 +23,122 @@ pageTwo.style.display="none";
 })
 
 
-let myArray = data.films;
+let filmsData = data.films;
 
 //nombrando nuestra lista recorrida
 const totalDataFilms = (listData) =>{
-  let listTitlePrueba = "";
+  let resultMovies = "";
 //recorriendo nuestro array
-listData.forEach((myArray) => {
+listData.forEach((filmsData) => {
   const dataCard = `
   <div class="cardContainer">
   <div class="cardInner">
   <div class="cardFront">
-  <img class="poster" src="${myArray.poster}">
-   <div class="filmsTitle"> ${myArray.title}</div>
-   <div class="filmsYear"> Year: ${myArray.release_date} <span>  ⭐ ${myArray.rt_score}</span> 
-   </div>
+  <img class="poster" src="${filmsData.poster}">
+  <div class="filmsTitle"> ${filmsData.title}</div>
+  <div class="filmsYear"> Year: ${filmsData.release_date} <span>  ⭐ ${filmsData.rt_score}</span> 
+  </div>
   </div>
   <div class="cardBack">
   <div class="cardTextBack">
-  Director:  ${myArray.director}
+  Director:  ${filmsData.director}
   <br>
-  Description: ${myArray.description}
+  Description: ${filmsData.description}
   </div>
-   </div>
-   </div>
-   </div> 
+  </div>
+  </div>
+  </div>
   `;
-  listTitlePrueba += dataCard ;
+  resultMovies += dataCard ;
     });
-    document.getElementById("filmsInfo").innerHTML= listTitlePrueba;
+    document.getElementById("filmsInfo").innerHTML= resultMovies;
   }
-  totalDataFilms(myArray);
-
-  //concatenamos arrays para llegar a gender de people
- let peopleValue=[];
- for (let element of myArray) {
-peopleValue.push(element.people);
- }
- let listOfPeople = peopleValue[0];
-for (let i=1; i<peopleValue.length; i++){
-  listOfPeople = listOfPeople.concat(peopleValue[i]);
-}
-let peopleGender=[];
- for (let element of listOfPeople) {
-peopleGender.push(element.gender);
- }
-
- const genderArr= new Set(peopleGender);
-let result = [...genderArr];
-console.log(result);
-console.log(filterByGender(genderArr, "female"));
-
-//console.log(listOfPeople); //Este array contiene todos los personajes
+  totalDataFilms(filmsData);
  /* console.log(sortMovies(myArray, "title", "A-Z"))
   console.log(sortMovies(myArray, "release_date" , "sortDateAsc"))*/
  document.getElementById('selectSortAZ').addEventListener('change', (e) => {
   const selectedIndex = e.currentTarget.value;
-  //debugger 
+  //debugger
   // sortBy.options[sortBy.selectedIndex].value;
   if (selectedIndex === "A-Z") {
-    totalDataFilms(sortMovies(myArray, 'title', 'A-Z'));
+    totalDataFilms(sortMovies(filmsData, 'title', 'A-Z'));
   }if (selectedIndex === "Z-A") {
-    totalDataFilms(sortMovies(myArray, 'title', "Z-A"));
+    totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
   }if (selectedIndex === "sortDateAsc") {
-    totalDataFilms(sortMovies(myArray, "release_date", "sortDateAsc"));
+    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
   }if (selectedIndex === "sortDateDes") {
-    totalDataFilms(sortMovies(myArray, "release_date", "sortDateDes"));
+    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
   }else{
- return totalDataFilms(myArray);
+ return totalDataFilms(filmsData);
   }
 });
+
+//traemos la data "gender" del objeto e imprimimos en interfaz
+  //concatenamos arrays para acceder a nuestros personajes del objeto
+  let peopleValue=[];
+  for (let element of filmsData) {
+ peopleValue.push(element.people);
+  }
+  let listOfPeople = peopleValue[0];
+ for (let i=1; i<peopleValue.length; i++){
+   listOfPeople = listOfPeople.concat(peopleValue[i]);
+ }
+ console.log(listOfPeople); //Este array contiene todos los personajes.
+ 
+ let peopleGender=[];
+  for (let element of listOfPeople) {
+ peopleGender.push(element.gender);
+  }
+ 
+  const genderArr= new Set(peopleGender);
+ let result = [...genderArr];
+ console.log(result);
+ //console.log(filterByGender(filmsData, peopleGender.Female));
+
+const totalPeople = (listData) =>{
+  let resultPeople = "";
+//recorriendo nuestro array
+listData.forEach((listOfPeople) => {
+  const dataPeopleObj = `
+  <div class="cardContainerPeople">
+  <div class="cardInner">
+  <div class="cardFront">
+  <img class="poster" src="${listOfPeople.img}">
+  <div class="filmsPeopleName"> ${listOfPeople.name}</div>
+  <div class="filmsGender"> Year: ${listOfPeople.gender}</div>
+  </div>
+  <div class="cardBack">
+  <div class="cardTextBack">
+  Specie:  ${listOfPeople.specie}
+  <br>
+  Eye color: ${listOfPeople.eye_color}
+  </div>
+  </div>
+  </div>
+  </div>
+  `;
+  resultPeople += dataPeopleObj ;
+    });
+    document.getElementById("filmsPeopleCard").innerHTML= resultPeople;
+  }
+  totalPeople(listOfPeople);
+
+
+
+//Aplicando evento al FILTER
+/*document.getElementById('selectGender').addEventListener('change', (e) => {
+  const selectedFilter = e.currentTarget.value;
+  //debugger 
+  // sortBy.options[sortBy.selectedIndex].value;
+  if (selectedFilter === "Female") {
+    totalDataFilms(sortMovies(filmsData, 'title', 'A-Z'));
+  return totalDataFilms(filmsData);
+  }
+ });*/
+ /* if (selectedFilter === "Z-A") {
+    totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
+  }if (selectedFilter === "sortDateAsc") {
+    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
+  }if (selectedFilter === "sortDateDes") {
+    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
+  }else{ */
