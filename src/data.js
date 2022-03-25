@@ -20,8 +20,8 @@ export const sortMovies = (dataFilms, sortBy, sortOrder) => {
           }
         } else if (sortBy === "release_date") {
           // ordena de forma ascendente fechas lanzamiento
-         if (sortOrder === "sortDateAsc") {
-          orderSelectF = dataFilms.sort(function(x, y) { 
+        if (sortOrder === "sortDateAsc") {
+          orderSelectF = dataFilms.sort(function(x, y) {
             if (x.release_date > y.release_date) return 1;
         if (x.release_date === y.release_date) return 0;
         return -1;
@@ -34,14 +34,25 @@ export const sortMovies = (dataFilms, sortBy, sortOrder) => {
       })
     }
     }
-  return orderSelectF;
+return orderSelectF;
 }
 
 
 export const filterByGender = function(dataPeople, genderData){
- const filterData= dataPeople.filter((element) => element.gender === genderData);
+const filterData= dataPeople.filter((element) => element.gender === genderData);
 return filterData;
 };
+
+
+//check
+// export const filterByGender = (dataFilms, genderData) => {
+//   const filterData= dataFilms.filter((films) => films.people.gender === genderData
+// );
+// if(genderData === "Female")
+
+// return filterData;
+//   };
+
 
 
 

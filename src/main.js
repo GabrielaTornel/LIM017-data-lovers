@@ -1,6 +1,8 @@
-import {sortMovies, filterByGender} from './data.js';
+import {sortMovies , filterByGender} from './data.js';
 import data from './data/ghibli/ghibli.js';
 console.log (data);
+console.log(filterByGender)
+
 console.log (sortMovies)
 
 let bttnMoreInf = document.getElementById("bttnMoreInf");
@@ -52,9 +54,9 @@ listData.forEach((filmsData) => {
     document.getElementById("filmsInfo").innerHTML= resultMovies;
   }
   totalDataFilms(filmsData);
-
-//Aplicando evento al sort
-document.getElementById('selectSortAZ').addEventListener('change', (e) => {
+ /* console.log(sortMovies(myArray, "title", "A-Z"))
+  console.log(sortMovies(myArray, "release_date" , "sortDateAsc"))*/
+ document.getElementById('selectSortAZ').addEventListener('change', (e) => {
   const selectedIndex = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;
@@ -70,6 +72,7 @@ document.getElementById('selectSortAZ').addEventListener('change', (e) => {
  return totalDataFilms(filmsData);
   }
 });
+
 //traemos la data "gender" del objeto e imprimimos en interfaz
   //concatenamos arrays para acceder a nuestros personajes del objeto
   let peopleValue=[];
