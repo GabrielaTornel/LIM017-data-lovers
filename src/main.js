@@ -86,11 +86,11 @@ document.getElementById('selectSortAZ').addEventListener('change', (e) => {
   for (let element of listOfPeople) {
  peopleGender.push(element.gender);
   }
- 
-  const genderArr= new Set(peopleGender);
+
+/*const genderArr= new Set(peopleGender);
  let result = [...genderArr];
  console.log(result);
- //console.log(filterByGender(filmsData, peopleGender.Female));
+ /*console.log(filterByGender(filmsData, peopleGender.Female)); */
 
 const totalPeople = (listData) =>{
   let resultPeople = "";
@@ -102,7 +102,7 @@ listData.forEach((listOfPeople) => {
   <div class="cardFront">
   <img class="poster" src="${listOfPeople.img}">
   <div class="filmsPeopleName"> ${listOfPeople.name}</div>
-  <div class="filmsGender"> Year: ${listOfPeople.gender}</div>
+  <div class="filmsGender"> Gender: ${listOfPeople.gender}</div>
   </div>
   <div class="cardBack">
   <div class="cardTextBack">
@@ -120,22 +120,41 @@ listData.forEach((listOfPeople) => {
   }
   totalPeople(listOfPeople);
 
+//Aplicando evento al FILTER
+/*   const filterGender = document.getElementById("selectGender");
+  filterGender.addEventListener("change", (x) => {
+    const selectedGender =  x.target.value);
+    if (selectedGender == "Female") {
+      totalPeople(filterByGender(listOfPeople, peopleGender.Female));
+    }
+    console.log(filterGender);
+    return totalPeople(listOfPeople);
+      }); */
 
 
 //Aplicando evento al FILTER
-/*document.getElementById('selectGender').addEventListener('change', (e) => {
+document.getElementById('selectGender').addEventListener('change', (e) => {
   const selectedFilter = e.currentTarget.value;
-  //debugger 
+  //debugger
   // sortBy.options[sortBy.selectedIndex].value;
-  if (selectedFilter === "Female") {
-    totalDataFilms(sortMovies(filmsData, 'title', 'A-Z'));
-  return totalDataFilms(filmsData);
+  if (selectedFilter == "Female") {
+   return totalPeople(filterByGender(listOfPeople, "Female"));
+  }else if(selectedFilter == "Male") {
+    return totalPeople(filterByGender(listOfPeople, "Male"));
+  } else if(selectedFilter == "NA") {
+    return totalPeople(filterByGender(listOfPeople, "NA"));
+  }else if(selectedFilter == "Unknown") {
+      return totalPeople(filterByGender(listOfPeople, "Unknown (Possible Male)"));
+  }else{
+    return totalPeople;
   }
- });*/
- /* if (selectedFilter === "Z-A") {
+  });
+ /* if (selectedFilter === "Male") {
     totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
-  }if (selectedFilter === "sortDateAsc") {
+  }if (selectedFilter === "NA") {
     totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
-  }if (selectedFilter === "sortDateDes") {
+  }if (selectedFilter === "Unknown (Possible Male)") {
     totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
   }else{ */
+
+// console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"));
