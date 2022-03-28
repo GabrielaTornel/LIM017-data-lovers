@@ -11,15 +11,32 @@ bttnMoreInf.addEventListener("click",()=>{
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="";
+
 })
-
-
 let backIntro = document.getElementById("backIntro");
 backIntro.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="";
   const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="none";
+})
+
+let btnPeople = document.getElementById("btnPeople");
+btnPeople.addEventListener("click",()=>{
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+})
+let backIntro2 = document.getElementById("backIntro2");
+backIntro2.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+
 })
 
 
