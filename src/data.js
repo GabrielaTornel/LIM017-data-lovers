@@ -38,47 +38,12 @@ return orderSelectF;
 }
 
 
-/*medio confuso,por terminar-attempt 1
-export const filterData = (data, condition) => {
-   let dummyData=[];
-  filmsData.filter((filmsData) => filmsData.people == "gender");
-  if  if(genderData === "Female"){
-  filterByResult = people.gender.female;
-  return filmsData.people=="Female";
-  }) 
-}
-
-attempt 2-con objeto*/
-/*export const filterByGender = (dataFilms, genderData) => {
-  let filterData =[]
-  let filterData= dataFilms.filter((films) => films.people.gender === genderData
-)
-if(genderData === "Female"){
-  filterData = dataFilms.name;
-}/* if(genderData === "Male"){
-  return false;
-}*/
-
-  export const filterByGender = (dataFilms, genderData) => {
-    const filterData= dataFilms.filter((films) => films.people.gender === genderData
-  );
-  if(genderData === "Female"){
-    return filterData === "Female" + "name";
-  } else{
-    return filterData === "no es mujer";
-  }
-    };
     
   //let nuevoArreglo = arreglo.filter(callback); => metodo 1arreglo vacio = array al cual se le aplica y callback funcion que se le aplica a cada elemento del arreglo
-
-export const filterByGender = (dataFilms, genderData) => {
-  const filterData= dataFilms.filter((films) => films.people.gender === genderData
-);
-if(genderData === "Female")
-
-return filterData;
-  };
-  
-//let nuevoArreglo = arreglo.filter(callback); => metodo 1arreglo vacio = array al cual se le aplica y callback funcion que se le aplica a cada elemento del arreglo
-
+  export const filterByGender = function(dataPeople, genderData){
+    const filterData= dataPeople.filter((element) => element.gender === genderData);
+    return filterData;
+    };
+    
+//let nuevoArreglo = arreglo.filter((element[])); => metodo 1arreglo vacio = array al cual se le aplica y callback funcion que se le aplica a cada elemento del arreglo
 
