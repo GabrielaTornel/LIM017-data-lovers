@@ -1,12 +1,30 @@
-import { example, anotherExample } from '../src/data.js';
+/* import { filterByGender, anotherExample } from '../src/data.js';
 
-
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+const PeoplebyGenderTest = {
+  "films":
+    [
+      {"title": "Castle in the Sky",
+      "people": [
+      {
+        "name": "General Muoro",
+        "gender": "Male",
+      }
+    ]
+    },
+    {"title": "My Neighbor Totoro",
+      "people": [
+        { "name": "Tatsuo Kusakabe",
+        "gender": "Male"
+      }
+      ]}
+  ]
+}
+describe("Filtros de genero", () => {
+  it("testear masculino", () => {
+    expect(function(PeoplebyGenderTest, "Pazu")).toBe("Male");
   });
-
-  it('returns `example`', () => {
+ */
+  it('testeo NA', () => {
     expect(example()).toBe('example');
   });
 });

@@ -1,5 +1,5 @@
-import {sortMovies , filterByGender} from './data.js';
-import data from './data/ghibli/ghibli.js';
+import {sortMovies , filterByGender} from "./data.js";
+import data from "./data/ghibli/ghibli.js";
 console.log (data);
 console.log(filterByGender)
 
@@ -36,9 +36,7 @@ backIntro2.addEventListener("click",()=>{
 pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="none";
-
 })
-
 
 let filmsData = data.films;
 
@@ -73,14 +71,14 @@ listData.forEach((filmsData) => {
   totalDataFilms(filmsData);
  /* console.log(sortMovies(myArray, "title", "A-Z"))
   console.log(sortMovies(myArray, "release_date" , "sortDateAsc"))*/
- document.getElementById('selectSortAZ').addEventListener('change', (e) => {
+ document.getElementById("selectSortAZ").addEventListener("change", (e) => {
   const selectedIndex = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;
   if (selectedIndex === "A-Z") {
-    totalDataFilms(sortMovies(filmsData, 'title', 'A-Z'));
+    totalDataFilms(sortMovies(filmsData, "title", "A-Z"));
   }if (selectedIndex === "Z-A") {
-    totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
+    totalDataFilms(sortMovies(filmsData, "title", "Z-A"));
   }if (selectedIndex === "sortDateAsc") {
     totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
   }if (selectedIndex === "sortDateDes") {
@@ -120,12 +118,12 @@ listData.forEach((listOfPeople) => {
   <div class="cardContainerPeople">
   <div class="cardInner">
   <div class="cardFront">
-  <img class="poster" src="${listOfPeople.img}">
-  <div class="filmsPeopleName"> ${listOfPeople.name}</div>
-  <div class="filmsGender"> Gender: ${listOfPeople.gender}</div>
-  </div>
-  <div class="cardBack">
-  <div class="cardTextBack">
+  <img class="posterPeople" src="${listOfPeople.img}">
+  <div class="filmsPeopleName">
+  Name: ${listOfPeople.name}
+  <br>
+  Gender: ${listOfPeople.gender}
+  <br>
   Specie:  ${listOfPeople.specie}
   <br>
   Eye color: ${listOfPeople.eye_color}
@@ -153,21 +151,19 @@ listData.forEach((listOfPeople) => {
 
 
 //Aplicando evento al FILTER
-document.getElementById('selectGender').addEventListener('change', (e) => {
+document.getElementById("selectGender").addEventListener("change", (e) => {
   const selectedFilter = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;
-  if (selectedFilter == "Female") {
+  if (selectedFilter == "002") {
    return totalPeople(filterByGender(listOfPeople, "Female"));
-  }else if(selectedFilter == "Male") {
+  }else if(selectedFilter == "001") {
     return totalPeople(filterByGender(listOfPeople, "Male"));
-  } else if(selectedFilter == "NA") {
+  } else if(selectedFilter == "003") {
     return totalPeople(filterByGender(listOfPeople, "NA"));
-  }else if(selectedFilter == "Unknown") {
+  }else {
       return totalPeople(filterByGender(listOfPeople, "Unknown (Possible Male)"));
-  }else{
-    return totalPeople;
-  }
+   }
   });
  /* if (selectedFilter === "Male") {
     totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
