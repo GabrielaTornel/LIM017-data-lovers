@@ -37,22 +37,51 @@ h1{
     display:flex;
     justify-content:center;
 }
-.btnIntro{
+.btnIntro {
     display:flex;
-    justify-content:center;
+    justify-content:flex-end;
 }
-#bttnMoreInf, #backIntro{
+#backIntro , #backIntro2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #A19D7A;
+  }
+  
+#backIntro2:hover , #backIntro:hover {
+    background-color: #A19D7A;
+    color: white;
+  }
+  
+#backIntro, #backIntro2{
+    border-radius: 10px;
+    color:black;
+    cursor: pointer;
+    text-align: center;
+    font-family:" EB Garamond";
+    font-size:20px;
+    padding: 16px 32px;
+    transition-duration: 0.4s;
+}
+#btnPeople{
+    background-color:#437155 ;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 16px 32px;
+    text-align: center;
+    font-family:" EB Garamond";
+    font-size:20px;
+}
+#bttnMoreInf{
     background-color: #cca872;
     border-radius: 10px;
     color: white;
-    padding: 20px 40px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 32px;
-    font-family:" EB Garamond";
     cursor: pointer;
+    padding:8px 5px;
+    text-align: center;
+    font-family:" EB Garamond";
+    font-size:30px;
 }
-
 .cardContainer, .cardContainerPeople{
     width: auto;
     height: 500px;

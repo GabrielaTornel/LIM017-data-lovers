@@ -11,15 +11,32 @@ bttnMoreInf.addEventListener("click",()=>{
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="";
+
 })
-
-
 let backIntro = document.getElementById("backIntro");
 backIntro.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="";
   const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="none";
+})
+
+let btnPeople = document.getElementById("btnPeople");
+btnPeople.addEventListener("click",()=>{
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+})
+let backIntro2 = document.getElementById("backIntro2");
+backIntro2.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+
 })
 
 
@@ -89,11 +106,11 @@ let listOfPeople = peopleValue[0];
   for (let element of listOfPeople) {
  peopleGender.push(element.gender);
   }
- 
+
 /*const genderArr= new Set(peopleGender);
  let result = [...genderArr];
  console.log(result);
- //console.log(filterByGender(filmsData, peopleGender.Female));*/
+ /*console.log(filterByGender(filmsData, peopleGender.Female)); */
 
 const totalPeople = (listData) =>{
   let resultPeople = "";
@@ -121,9 +138,22 @@ listData.forEach((listOfPeople) => {
   totalPeople(listOfPeople);
 
 //Aplicando evento al FILTER
+/*   const filterGender = document.getElementById("selectGender");
+  filterGender.addEventListener("change", (x) => {
+    const selectedGender =  x.target.value);
+    if (selectedGender == "Female") {
+      totalPeople(filterByGender(listOfPeople, peopleGender.Female));
+    }
+    console.log(filterGender);
+    return totalPeople(listOfPeople);
+      }); */
+
+
+//Aplicando evento al FILTER
 document.getElementById('selectGender').addEventListener('change', (e) => {
   const selectedFilter = e.currentTarget.value;
   //debugger
+  // sortBy.options[sortBy.selectedIndex].value;
   if (selectedFilter == "Female") {
    return totalPeople(filterByGender(listOfPeople, "Female"));
   }else if(selectedFilter == "Male") {
@@ -136,6 +166,12 @@ document.getElementById('selectGender').addEventListener('change', (e) => {
     return totalPeople;
   }
   });
+ /* if (selectedFilter === "Male") {
+    totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
+  }if (selectedFilter === "NA") {
+    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
+  }if (selectedFilter === "Unknown (Possible Male)") {
+    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
+  }else{ */
 
-  
-  // sortBy.options[sortBy.selectedIndex].value;
+// console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"));
