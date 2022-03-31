@@ -75,7 +75,7 @@ listData.forEach((filmsData) => {
   const selectedIndex = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;
-  if (selectedIndex === "A-Z") {
+  if (selectedIndex == "A-Z") {
     totalDataFilms(sortMovies(filmsData, "title", "A-Z"));
   }if (selectedIndex === "Z-A") {
     totalDataFilms(sortMovies(filmsData, "title", "Z-A"));
