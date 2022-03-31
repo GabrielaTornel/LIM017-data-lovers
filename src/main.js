@@ -56,9 +56,9 @@ listData.forEach((filmsData) => {
   </div>
   <div class="cardBack">
   <div class="cardTextBack">
-  Director:  ${filmsData.director}
+  <strong> Director: </strong>  ${filmsData.director}
   <br>
-  Description: ${filmsData.description}
+  <strong> Description:</strong> ${filmsData.description}
   </div>
   </div>
   </div>
@@ -75,7 +75,7 @@ listData.forEach((filmsData) => {
   const selectedIndex = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;
-  if (selectedIndex === "A-Z") {
+  if (selectedIndex == "A-Z") {
     totalDataFilms(sortMovies(filmsData, "title", "A-Z"));
   }if (selectedIndex === "Z-A") {
     totalDataFilms(sortMovies(filmsData, "title", "Z-A"));
@@ -104,11 +104,30 @@ listData.forEach((filmsData) => {
   for (let element of listOfPeople) {
  peopleGender.push(element.gender);
   }
-
 /*const genderArr= new Set(peopleGender);
  let result = [...genderArr];
  console.log(result);
  /*console.log(filterByGender(filmsData, peopleGender.Female)); */
+
+
+//por revisar!vehicles
+
+/* let vehicleValue=[];
+for (let element of filmsData) {
+  vehicleValue.push(element.vehicles);
+}
+
+let listOfVehicle = vehicleValue[0];
+for (let i=1; i<vehicleValue.length; i++){
+  listOfVehicle = listOfVehicle.concat(vehicleValue[i]);
+}
+
+const vehicleArr= new Set(vehicleValue);
+ let resultVehicle = [...vehicleArr];
+ console.log(resultVehicle); */
+
+
+
 
 const totalPeople = (listData) =>{
   let resultPeople = "";
@@ -171,6 +190,5 @@ document.getElementById("selectGender").addEventListener("change", (e) => {
     totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
   }if (selectedFilter === "Unknown (Possible Male)") {
     totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
-  }else{ */
 
-// console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"));
+console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"))*/

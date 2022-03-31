@@ -39,10 +39,12 @@ return orderSelectF;
 
 
 export const filterByGender = function(dataPeople, genderData){
-const filterData= dataPeople.filter((element) => element.gender === genderData);
+const filterData= dataPeople.filter(element => element.gender === genderData);
 return filterData;
 };
 
+
+// module.exports=filterByGender;
 
 //check
 // export const filterByGender = (dataFilms, genderData) => {
