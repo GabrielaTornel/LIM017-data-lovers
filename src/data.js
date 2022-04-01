@@ -52,3 +52,6 @@ export const  computeStats = (dataFilms, nameDirector) =>{
     const percent = Math.round((count / dataFilms.length)*100);
   return percent;
 };
+
+
+
