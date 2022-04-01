@@ -43,7 +43,6 @@ const filterData= dataPeople.filter(element => element.gender === genderData);
 return filterData;
 };
 
-
 export const  computeStats = (dataFilms, nameDirector) =>{
   //constante que guarde funcion de filtro de directores 
   const moviesByDirector = (dataFilms.filter(y => y.director === nameDirector));

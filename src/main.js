@@ -1,9 +1,9 @@
 import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
-console.log (data);
-console.log(filterByGender)
+console.log (computeStats);
 
-console.log (sortMovies)
+
+//console.log (sortMovies)
 
 let bttnMoreInf = document.getElementById("bttnMoreInf");
 bttnMoreInf.addEventListener("click",()=>{
@@ -37,6 +37,42 @@ pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="none";
 })
+
+let btnStatistics = document.getElementById("btnStatistics");
+btnStatistics.addEventListener("click",()=>{
+  const pageFour=document.getElementById("pageFour");
+  pageFour.style.display="";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+})
+let backIntro3 = document.getElementById("backIntro3");
+backIntro3.addEventListener("click",()=>{
+  const pageFour=document.getElementById("pageFour");
+  pageFour.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="";
+})
+let btnStatistics2 = document.getElementById("btnStatistics2");
+btnStatistics2.addEventListener("click",()=>{
+  const pageFour=document.getElementById("pageFour");
+  pageFour.style.display="";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+})
+
+
 
 let filmsData = data.films;
 
@@ -90,15 +126,15 @@ listData.forEach((filmsData) => {
 
 //traemos la data "gender" del objeto e imprimimos en interfaz
   //concatenamos arrays para acceder a nuestros personajes del objeto
-  let peopleValue=[];
+let peopleValue=[];
   for (let element of filmsData) {
  peopleValue.push(element.people);
   }
-  let listOfPeople = peopleValue[0];
+let listOfPeople = peopleValue[0];
  for (let i=1; i<peopleValue.length; i++){
    listOfPeople = listOfPeople.concat(peopleValue[i]);
  }
- console.log(listOfPeople); //Este array contiene todos los personajes.
+ //console.log(listOfPeople); //Este array contiene todos los personajes.
  
  let peopleGender=[];
   for (let element of listOfPeople) {
@@ -108,26 +144,6 @@ listData.forEach((filmsData) => {
  let result = [...genderArr];
  console.log(result);
  /*console.log(filterByGender(filmsData, peopleGender.Female)); */
-
-
-//por revisar!vehicles
-
-/* let vehicleValue=[];
-for (let element of filmsData) {
-  vehicleValue.push(element.vehicles);
-}
-
-let listOfVehicle = vehicleValue[0];
-for (let i=1; i<vehicleValue.length; i++){
-  listOfVehicle = listOfVehicle.concat(vehicleValue[i]);
-}
-
-const vehicleArr= new Set(vehicleValue);
- let resultVehicle = [...vehicleArr];
- console.log(resultVehicle); */
-
-
-
 
 const totalPeople = (listData) =>{
   let resultPeople = "";
@@ -153,20 +169,9 @@ listData.forEach((listOfPeople) => {
   `;
   resultPeople += dataPeopleObj ;
     });
-    document.getElementById("filmsPeopleCard").innerHTML= resultPeople;
+  document.getElementById("filmsPeopleCard").innerHTML= resultPeople;
   }
   totalPeople(listOfPeople);
-
-//Aplicando evento al FILTER
-/*   const filterGender = document.getElementById("selectGender");
-  filterGender.addEventListener("change", (x) => {
-    const selectedGender =  x.target.value);
-    if (selectedGender == "Female") {
-      totalPeople(filterByGender(listOfPeople, peopleGender.Female));
-    }
-    console.log(filterGender);
-    return totalPeople(listOfPeople);
-      }); */
 
 
 //Aplicando evento al FILTER
@@ -184,12 +189,12 @@ document.getElementById("selectGender").addEventListener("change", (e) => {
       return totalPeople(filterByGender(listOfPeople, "Unknown (Possible Male)"));
    }
   });
- /* if (selectedFilter === "Male") {
-    totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
-  }if (selectedFilter === "NA") {
-    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
-  }if (selectedFilter === "Unknown (Possible Male)") {
-    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
+ /*
+let resultPorcent ="" 
+let directorList=[];
+for (let element of filmsData) {
+directorList.push(element.director);
+}
 
 console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"))*/
 
@@ -199,7 +204,7 @@ console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"))*/
 director = director.filter((item, i) =>{
   return director.indexOf(item) === i;
 }) */
-
+//aca el intento de gabriela xD
 let directorList=[];
 for (let element of filmsData) {
 directorList.push(element.director);
@@ -210,6 +215,15 @@ let porcentaje =[];
 for (let element of directorList){
   porcentaje.push((computeStats(filmsData, element)));
 }
+
+
+let directorPercent = `${directorList} ${porcentaje} `;
+
+
+console.log(directorPercent)
+
+
+//const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
 
 /* let directorPercent = directorList + porcentaje;
 

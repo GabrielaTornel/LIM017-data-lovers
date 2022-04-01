@@ -52,7 +52,7 @@ h1{
     color: white;
   }
   
-#backIntro, #backIntro2{
+#backIntro, #backIntro2, #backIntro3{
     border-radius: 10px;
     color:black;
     cursor: pointer;
@@ -62,7 +62,7 @@ h1{
     padding: 16px 32px;
     transition-duration: 0.4s;
 }
-#btnPeople{
+#btnPeople, #btnStatistics2, #btnStatistics{
     background-color:#437155 ;
     border-radius: 10px;
     color: white;
