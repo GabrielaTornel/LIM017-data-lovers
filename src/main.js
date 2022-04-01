@@ -1,9 +1,9 @@
-import {sortMovies , filterByGender} from "./data.js";
+import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
-console.log (data);
+console.log (computeStats);
 
 
-console.log (sortMovies)
+//console.log (sortMovies)
 
 let bttnMoreInf = document.getElementById("bttnMoreInf");
 bttnMoreInf.addEventListener("click",()=>{
@@ -38,6 +38,42 @@ const pageThree=document.getElementById("pageThree");
 pageThree.style.display="none";
 })
 
+let btnStatistics = document.getElementById("btnStatistics");
+btnStatistics.addEventListener("click",()=>{
+  const pageFour=document.getElementById("pageFour");
+  pageFour.style.display="";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+})
+let backIntro3 = document.getElementById("backIntro3");
+backIntro3.addEventListener("click",()=>{
+  const pageFour=document.getElementById("pageFour");
+  pageFour.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="";
+})
+let btnStatistics2 = document.getElementById("btnStatistics2");
+btnStatistics2.addEventListener("click",()=>{
+  const pageFour=document.getElementById("pageFour");
+  pageFour.style.display="";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+})
+
+
+
 let filmsData = data.films;
 
 //nombrando nuestra lista recorrida
@@ -56,9 +92,9 @@ listData.forEach((filmsData) => {
   </div>
   <div class="cardBack">
   <div class="cardTextBack">
-  Director:  ${filmsData.director}
+  <strong> Director: </strong>  ${filmsData.director}
   <br>
-  Description: ${filmsData.description}
+  <strong> Description:</strong> ${filmsData.description}
   </div>
   </div>
   </div>
@@ -75,7 +111,7 @@ listData.forEach((filmsData) => {
   const selectedIndex = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;
-  if (selectedIndex === "A-Z") {
+  if (selectedIndex == "A-Z") {
     totalDataFilms(sortMovies(filmsData, "title", "A-Z"));
   }if (selectedIndex === "Z-A") {
     totalDataFilms(sortMovies(filmsData, "title", "Z-A"));
@@ -98,13 +134,12 @@ let listOfPeople = peopleValue[0];
  for (let i=1; i<peopleValue.length; i++){
    listOfPeople = listOfPeople.concat(peopleValue[i]);
  }
- console.log(listOfPeople); //Este array contiene todos los personajes.
+ //console.log(listOfPeople); //Este array contiene todos los personajes.
  
  let peopleGender=[];
   for (let element of listOfPeople) {
  peopleGender.push(element.gender);
   }
-
 /*const genderArr= new Set(peopleGender);
  let result = [...genderArr];
  console.log(result);
@@ -154,12 +189,24 @@ document.getElementById("selectGender").addEventListener("change", (e) => {
       return totalPeople(filterByGender(listOfPeople, "Unknown (Possible Male)"));
    }
   });
- /* if (selectedFilter === "Male") {
-    totalDataFilms(sortMovies(filmsData, 'title', "Z-A"));
-  }if (selectedFilter === "NA") {
-    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateAsc"));
-  }if (selectedFilter === "Unknown (Possible Male)") {
-    totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
-  }else{ */
+ /*
+let resultPorcent ="" 
+let directorList=[];
+for (let element of filmsData) {
+directorList.push(element.director);
+}
 
-// console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"));
+let porcentaje =[];
+for (let element of directorList){
+  porcentaje.push((computeStats(filmsData, element)));
+}
+
+
+let directorPercent = `${directorList} ${porcentaje} `;
+
+
+console.log(directorPercent)
+
+
+//const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
+*/
