@@ -44,17 +44,15 @@ return filterData;
 };
 
 
-// module.exports=filterByGender;
-
-//check
-// export const filterByGender = (dataFilms, genderData) => {
-//   const filterData= dataFilms.filter((films) => films.people.gender === genderData
-// );
-// if(genderData === "Female")
-
-// return filterData;
-//   };
-
+export const  computeStats = (dataFilms, nameDirector) =>{
+  //constante que guarde funcion de filtro de directores 
+  const moviesByDirector = (dataFilms.filter(y => y.director === nameDirector));
+  // constante guarda el numero de directores
+  const count = moviesByDirector.length;
+  //constante que realiza la operacion matemtica,regla de tres
+    const percent = Math.round((count / dataFilms.length)*100);
+  return percent;
+};
 
 
 
