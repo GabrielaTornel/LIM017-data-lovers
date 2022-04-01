@@ -1,4 +1,4 @@
-import {sortMovies , filterByGender} from "./data.js";
+import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
 console.log (data);
 console.log(filterByGender)
@@ -192,3 +192,80 @@ document.getElementById("selectGender").addEventListener("change", (e) => {
     totalDataFilms(sortMovies(filmsData, "release_date", "sortDateDes"));
 
 console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"))*/
+
+
+//Estadísticas
+/* let director = filmsData.map((x) => x.director);
+director = director.filter((item, i) =>{
+  return director.indexOf(item) === i;
+}) */
+
+let directorList=[];
+for (let element of filmsData) {
+directorList.push(element.director);
+}
+
+// const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
+let porcentaje =[];
+for (let element of directorList){
+  porcentaje.push((computeStats(filmsData, element)));
+}
+
+/* let directorPercent = directorList + porcentaje;
+
+console.log(directorPercent);*/ 
+
+
+
+var result = [],
+    i, l = Math.min(directorList.length, porcentaje.length);
+    
+for (i = 0; i < l; i++) {
+    result.push(...directorList, ...porcentaje);
+}
+// result.push(...directorList.slice(l), ...porcentaje.slice(l));
+
+
+const directorArr= new Set(result);
+ let resultFinal = [...directorArr];
+
+ console.log(resultFinal);
+
+ /* function getPercent(a){
+  new Chart (a, {
+            type:'pie',
+            data: {
+                labels: director,
+                datasets: [{
+                  data: porcentaje,
+                  backgroundColor: [
+                  'rgb(255, 171, 193, 0.9)',
+                  'rgb(156, 170, 242, 0.9)',
+                  'rgb(255, 202, 203, 0.9)',
+                  'rgb(149, 203, 255, 0.9)',
+                  'rgb(255, 244, 209, 0.9)',
+                  'rgb(180, 229, 255, 0.9)'
+                    ],
+                },
+              ]},
+              options: {
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                  },
+                  title: {
+                    position: 'bottom',
+                    display: true,
+                    text: `Isao Takahata: 25%
+                    Hayao Miyazaki: 45%
+                    Gorō Miyazaki:10%
+                    Hiromasa Yonebayashi:10%
+                    Hiroyuki Morita: 5%
+                    Yoshifumi Kondō: 5%`
+                  }
+                }
+              },
+        })
+      }
+    getPercent(mySecondChart); */

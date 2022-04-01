@@ -39,7 +39,7 @@ describe("ordenar data", () => {
           {title:"My Neighbor Totoro"},
         ])
       })
-    /*it("mantenemos orden alfabeticamente", () =>{
+    *it("mantenemos orden alfabeticamente", () =>{
       const data2 =[
         {
           title: "A"
@@ -58,7 +58,7 @@ describe("ordenar data", () => {
           {title:"Castle in the Sky"},
           {title:"My Neighbor Totoro"},
         ])
-    })*/
+    })
       it( "ordenamos alfabeticamente Z-A", () => {
         const data = [
           {
@@ -123,4 +123,28 @@ describe("ordenar data", () => {
           {release_date: "1991"},
         ])
   })
+  it( "ordenamos por fecha lanzamiento menor a mayor", () => {
+    const data = [
+    {
+      release_date: "1991"
+    },
+      {
+        release_date: "1988"
+    },
+    {
+      release_date: "1988",
+      },
+      {
+        release_date: "1989",
+        }
+    ]
+    const result= sortMovies(data,"release_date","sortDateAsc")
+    expect(result).toEqual(
+      [
+        {release_date: "1988"},
+        {release_date: "1988"},
+        {release_date: "1989"},
+        {release_date: "1991"}
+      ])
+})
 })
