@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
 console.log (computeStats);
@@ -216,24 +218,12 @@ for (let element of directorList){
   porcentaje.push((computeStats(filmsData, element)));
 }
 
-
-let directorPercent = `${directorList} ${porcentaje} `;
-
-
-console.log(directorPercent)
+/* let directorPercent = `${directorList} ${porcentaje} `;
+console.log(directorPercent) */
 
 
-//const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
-
-/* let directorPercent = directorList + porcentaje;
-
-console.log(directorPercent);*/ 
-
-
-
-var result = [],
+let result = [],
     i, l = Math.min(directorList.length, porcentaje.length);
-    
 for (i = 0; i < l; i++) {
     result.push(...directorList, ...porcentaje);
 }
@@ -245,41 +235,26 @@ const directorArr= new Set(result);
 
  console.log(resultFinal);
 
- /* function getPercent(a){
-  new Chart (a, {
-            type:'pie',
-            data: {
-                labels: director,
-                datasets: [{
-                  data: porcentaje,
-                  backgroundColor: [
-                  'rgb(255, 171, 193, 0.9)',
-                  'rgb(156, 170, 242, 0.9)',
-                  'rgb(255, 202, 203, 0.9)',
-                  'rgb(149, 203, 255, 0.9)',
-                  'rgb(255, 244, 209, 0.9)',
-                  'rgb(180, 229, 255, 0.9)'
-                    ],
-                },
-              ]},
-              options: {
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: 'top',
-                  },
-                  title: {
-                    position: 'bottom',
-                    display: true,
-                    text: `Isao Takahata: 25%
-                    Hayao Miyazaki: 45%
-                    Gorō Miyazaki:10%
-                    Hiromasa Yonebayashi:10%
-                    Hiroyuki Morita: 5%
-                    Yoshifumi Kondō: 5%`
-                  }
-                }
-              },
-        })
-      }
-    getPercent(mySecondChart); */
+ const directorFinalResult = document.getElementById("filmsStatistics");
+ const directorTable =`
+ <div>
+ <table>
+ <tr><th> DIRECTOR </th> <th> PERCENT (%)</th></tr>
+ <tr><td>${resultFinal[0]}</td><td>${resultFinal[6]+ "%"} </td></tr>
+ <tr><td>${resultFinal[1]}</td><td>${resultFinal[7]+ "%"} </td></tr>
+ <tr><td>${resultFinal[2]}</td><td>${resultFinal[8]+ "%"} </td></tr>
+ <tr><td>${resultFinal[3]}</td><td>${resultFinal[8]+ "%"} </td></tr>
+ <tr><td>${resultFinal[4]}</td><td>${resultFinal[9]+ "%"} </td></tr>
+ <tr><td>${resultFinal[5]}</td><td>${resultFinal[9]+ "%"} </td></tr>
+  </table>
+ </div>
+ `;
+ directorFinalResult.innerHTML=directorTable;
+ 
+ //const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
+ 
+ /* let directorPercent = directorList + porcentaje;
+ 
+ console.log(directorPercent);*/
+
+
