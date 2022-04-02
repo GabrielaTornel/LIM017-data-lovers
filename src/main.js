@@ -121,7 +121,7 @@ listData.forEach((filmsData) => {
   <div class="cardFront">
   <img class="poster" src="${filmsData.poster}">
   <div class="filmsTitle"> ${filmsData.title}</div>
-  <div class="filmsYear"> Year: ${filmsData.release_date} <span>  ⭐ ${filmsData.rt_score}</span>
+  <div class="filmsYear"> Year: ${filmsData.release_date} <span>  ⭐ ${filmsData.rt_score}</span> 
   </div>
   </div>
   <div class="cardBack">
