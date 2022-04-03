@@ -7,14 +7,26 @@ console.log (computeStats);
 
 //console.log (sortMovies)
 
-let bttnMoreInf = document.getElementById("bttnMoreInf");
-bttnMoreInf.addEventListener("click",()=>{
+let btnMoreInf = document.getElementById("btnMoreInf");
+btnMoreInf.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="";
-
 })
+
+let btnMoreInf2 = document.getElementById("btnMoreInf2");
+btnMoreInf2.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
+})
+
 let backIntro = document.getElementById("backIntro");
 backIntro.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
@@ -38,6 +50,18 @@ backIntro2.addEventListener("click",()=>{
 pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="none";
+})
+
+let btnMoreInf3 = document.getElementById("btnMoreInf3");
+btnMoreInf3.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
 
 let btnStatistics = document.getElementById("btnStatistics");
@@ -74,6 +98,15 @@ const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
 
+let btnPeople2 = document.getElementById("btnPeople2");
+btnPeople2.addEventListener("click",()=>{
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+})
 
 
 let filmsData = data.films;
@@ -238,14 +271,15 @@ const directorArr= new Set(result);
  const directorFinalResult = document.getElementById("filmsStatistics");
  const directorTable =`
  <div>
- <table>
+ <p> Find below the movies statistics by directors: </p>
+ <table class="stadisticsTable">
  <tr><th> DIRECTOR </th> <th> PERCENT (%)</th></tr>
- <tr><td>${resultFinal[0]}</td><td>${resultFinal[6]+ "%"} </td></tr>
- <tr><td>${resultFinal[1]}</td><td>${resultFinal[7]+ "%"} </td></tr>
- <tr><td>${resultFinal[2]}</td><td>${resultFinal[8]+ "%"} </td></tr>
- <tr><td>${resultFinal[3]}</td><td>${resultFinal[8]+ "%"} </td></tr>
- <tr><td>${resultFinal[4]}</td><td>${resultFinal[9]+ "%"} </td></tr>
- <tr><td>${resultFinal[5]}</td><td>${resultFinal[9]+ "%"} </td></tr>
+ <tr><td >${resultFinal[0]}</td><td >${resultFinal[6]+ "%"} </td></tr>
+ <tr><td >${resultFinal[1]}</td><td >${resultFinal[7]+ "%"} </td></tr>
+ <tr><td >${resultFinal[2]}</td><td >${resultFinal[8]+ "%"} </td></tr>
+ <tr><td >${resultFinal[3]}</td><td >${resultFinal[8]+ "%"} </td></tr>
+ <tr><td >${resultFinal[4]}</td><td >${resultFinal[9]+ "%"} </td></tr>
+ <tr><td >${resultFinal[5]}</td><td >${resultFinal[9]+ "%"} </td></tr>
   </table>
  </div>
  `;

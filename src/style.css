@@ -62,7 +62,7 @@ h1{
     padding: 16px 32px;
     transition-duration: 0.4s;
 }
-#btnPeople, #btnStatistics2, #btnStatistics{
+#btnPeople, #btnStatistics2, #btnStatistics, #btnMoreInf3, #btnMoreInf2, #btnPeople2{
     background-color:#437155 ;
     border-radius: 10px;
     color: white;
@@ -72,7 +72,7 @@ h1{
     font-family:" EB Garamond";
     font-size:20px;
 }
-#bttnMoreInf{
+#btnMoreInf{
     background-color: #cca872;
     border-radius: 10px;
     color: white;
@@ -192,6 +192,18 @@ h1{
     font-weight: 200;
     bottom:0;
 }
+
+.stadisticsTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  table, th, td {
+    border: 1px solid;
+    text-align:center;
+    padding:5px;
+  }
 
 
 
