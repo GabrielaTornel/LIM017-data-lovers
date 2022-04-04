@@ -7,11 +7,32 @@ console.log (computeStats);
 
 let bttnMoreInf = document.getElementById("bttnMoreInf");
 bttnMoreInf.addEventListener("click",()=>{
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="";
+})
+let bttnMoreInf2 = document.getElementById("bttnMoreInf2");
+bttnMoreInf2.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="";
-
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
+})
+let bttnMoreInf3 = document.getElementById("bttnMoreInf3");
+bttnMoreInf3.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
 let backIntro = document.getElementById("backIntro");
 backIntro.addEventListener("click",()=>{
@@ -27,7 +48,19 @@ btnPeople.addEventListener("click",()=>{
 pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
+let btnPeople2 = document.getElementById("btnPeople2");
+btnPeople2.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+})
+
 let backIntro2 = document.getElementById("backIntro2");
 backIntro2.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
@@ -71,6 +104,7 @@ pageThree.style.display="none";
 const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
+
 
 
 

@@ -62,7 +62,7 @@ h1{
     padding: 16px 32px;
     transition-duration: 0.4s;
 }
-#btnPeople, #btnStatistics2, #btnStatistics{
+#btnPeople, #btnStatistics2, #btnStatistics, #bttnMoreInf2, #btnPeople2, #bttnMoreInf3{
     background-color:#437155 ;
     border-radius: 10px;
     color: white;
