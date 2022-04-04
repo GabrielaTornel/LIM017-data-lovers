@@ -17,6 +17,7 @@ pageTwo.style.display="";
 
 let btnMoreInf2 = document.getElementById("btnMoreInf2");
 btnMoreInf2.addEventListener("click",()=>{
+
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
@@ -41,7 +42,19 @@ btnPeople.addEventListener("click",()=>{
 pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
+let btnPeople2 = document.getElementById("btnPeople2");
+btnPeople2.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+})
+
 let backIntro2 = document.getElementById("backIntro2");
 backIntro2.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
@@ -107,6 +120,7 @@ pageThree.style.display="";
 const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
+
 
 
 let filmsData = data.films;
