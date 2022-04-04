@@ -17,6 +17,7 @@ pageTwo.style.display="";
 
 let btnMoreInf2 = document.getElementById("btnMoreInf2");
 btnMoreInf2.addEventListener("click",()=>{
+
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
@@ -37,11 +38,25 @@ pageTwo.style.display="none";
 
 let btnPeople = document.getElementById("btnPeople");
 btnPeople.addEventListener("click",()=>{
-  const pageTwo=document.getElementById("pageTwo");
+const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
+let btnPeople2 = document.getElementById("btnPeople2");
+btnPeople2.addEventListener("click",()=>{
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
+})
+
 let backIntro2 = document.getElementById("backIntro2");
 backIntro2.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
@@ -97,19 +112,6 @@ pageThree.style.display="none";
 const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
-
-let btnPeople2 = document.getElementById("btnPeople2");
-btnPeople2.addEventListener("click",()=>{
-  const pageTwo=document.getElementById("pageTwo");
-pageTwo.style.display="none";
-const pageThree=document.getElementById("pageThree");
-pageThree.style.display="";
-const pageOne=document.getElementById("pageOne");
-pageOne.style.display="none";
-const pageFour=document.getElementById("pageFour");
-pageFour.style.display="none";
-})
-
 
 let filmsData = data.films;
 
@@ -241,20 +243,16 @@ console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"))*/
 director = director.filter((item, i) =>{
   return director.indexOf(item) === i;
 }) */
-//aca el intento de gabriela xD
+
 let directorList=[];
 for (let element of filmsData) {
 directorList.push(element.director);
 }
 
-// const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
 let porcentaje =[];
 for (let element of directorList){
   porcentaje.push((computeStats(filmsData, element)));
 }
-
-/* let directorPercent = `${directorList} ${porcentaje} `;
-console.log(directorPercent) */
 
 
 let result = [],
