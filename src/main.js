@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
 import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
 console.log (computeStats);
@@ -17,10 +15,9 @@ pageTwo.style.display="";
 
 let btnMoreInf2 = document.getElementById("btnMoreInf2");
 btnMoreInf2.addEventListener("click",()=>{
-
-  const pageOne=document.getElementById("pageOne");
-  pageOne.style.display="none";
-  const pageTwo=document.getElementById("pageTwo");
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="none";
@@ -45,6 +42,7 @@ pageThree.style.display="";
 const pageFour=document.getElementById("pageFour");
 pageFour.style.display="none";
 })
+
 let btnPeople2 = document.getElementById("btnPeople2");
 btnPeople2.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
@@ -53,6 +51,8 @@ btnPeople2.addEventListener("click",()=>{
 pageTwo.style.display="none";
 const pageThree=document.getElementById("pageThree");
 pageThree.style.display="";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
 
 let backIntro2 = document.getElementById("backIntro2");
@@ -110,17 +110,6 @@ pageThree.style.display="none";
 const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
-
-let btnPeople2 = document.getElementById("btnPeople2");
-btnPeople2.addEventListener("click",()=>{
-  const pageTwo=document.getElementById("pageTwo");
-pageTwo.style.display="none";
-const pageThree=document.getElementById("pageThree");
-pageThree.style.display="";
-const pageOne=document.getElementById("pageOne");
-pageOne.style.display="none";
-})
-
 
 
 let filmsData = data.films;
@@ -238,22 +227,7 @@ document.getElementById("selectGender").addEventListener("change", (e) => {
       return totalPeople(filterByGender(listOfPeople, "Unknown (Possible Male)"));
    }
   });
- /*
-let resultPorcent ="" 
-let directorList=[];
-for (let element of filmsData) {
-directorList.push(element.director);
-}
 
-console.log(filterByGender(listOfPeople,"Unknown (Possible Male)"))*/
-
-
-//Estadísticas
-/* let director = filmsData.map((x) => x.director);
-director = director.filter((item, i) =>{
-  return director.indexOf(item) === i;
-}) */
-//aca el intento de gabriela xD
 let directorList=[];
 for (let element of filmsData) {
 directorList.push(element.director);
@@ -265,16 +239,11 @@ for (let element of directorList){
   porcentaje.push((computeStats(filmsData, element)));
 }
 
-/* let directorPercent = `${directorList} ${porcentaje} `;
-console.log(directorPercent) */
-
-
 let result = [],
     i, l = Math.min(directorList.length, porcentaje.length);
 for (i = 0; i < l; i++) {
     result.push(...directorList, ...porcentaje);
 }
-// result.push(...directorList.slice(l), ...porcentaje.slice(l));
 
 
 const directorArr= new Set(result);
@@ -298,11 +267,3 @@ const directorArr= new Set(result);
  </div>
  `;
  directorFinalResult.innerHTML=directorTable;
- 
- //const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
- 
- /* let directorPercent = directorList + porcentaje;
- 
- console.log(directorPercent);*/
-
-
