@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
 console.log (computeStats);
@@ -5,15 +7,17 @@ console.log (computeStats);
 
 //console.log (sortMovies)
 
-let bttnMoreInf = document.getElementById("bttnMoreInf");
-bttnMoreInf.addEventListener("click",()=>{
-const pageOne=document.getElementById("pageOne");
-pageOne.style.display="none";
-const pageTwo=document.getElementById("pageTwo");
+let btnMoreInf = document.getElementById("btnMoreInf");
+btnMoreInf.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
 pageTwo.style.display="";
 })
-let bttnMoreInf2 = document.getElementById("bttnMoreInf2");
-bttnMoreInf2.addEventListener("click",()=>{
+
+let btnMoreInf2 = document.getElementById("btnMoreInf2");
+btnMoreInf2.addEventListener("click",()=>{
+
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
@@ -23,17 +27,7 @@ pageThree.style.display="none";
 const pageFour=document.getElementById("pageFour");
 pageFour.style.display="none";
 })
-let bttnMoreInf3 = document.getElementById("bttnMoreInf3");
-bttnMoreInf3.addEventListener("click",()=>{
-  const pageOne=document.getElementById("pageOne");
-  pageOne.style.display="none";
-  const pageTwo=document.getElementById("pageTwo");
-pageTwo.style.display="";
-const pageThree=document.getElementById("pageThree");
-pageThree.style.display="none";
-const pageFour=document.getElementById("pageFour");
-pageFour.style.display="none";
-})
+
 let backIntro = document.getElementById("backIntro");
 backIntro.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
@@ -71,6 +65,18 @@ const pageThree=document.getElementById("pageThree");
 pageThree.style.display="none";
 })
 
+let btnMoreInf3 = document.getElementById("btnMoreInf3");
+btnMoreInf3.addEventListener("click",()=>{
+  const pageOne=document.getElementById("pageOne");
+  pageOne.style.display="none";
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="none";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
+})
+
 let btnStatistics = document.getElementById("btnStatistics");
 btnStatistics.addEventListener("click",()=>{
   const pageFour=document.getElementById("pageFour");
@@ -105,6 +111,15 @@ const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
 
+let btnPeople2 = document.getElementById("btnPeople2");
+btnPeople2.addEventListener("click",()=>{
+  const pageTwo=document.getElementById("pageTwo");
+pageTwo.style.display="none";
+const pageThree=document.getElementById("pageThree");
+pageThree.style.display="";
+const pageOne=document.getElementById("pageOne");
+pageOne.style.display="none";
+})
 
 
 
@@ -250,24 +265,12 @@ for (let element of directorList){
   porcentaje.push((computeStats(filmsData, element)));
 }
 
-
-let directorPercent = `${directorList} ${porcentaje} `;
-
-
-console.log(directorPercent)
+/* let directorPercent = `${directorList} ${porcentaje} `;
+console.log(directorPercent) */
 
 
-//const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
-
-/* let directorPercent = directorList + porcentaje;
-
-console.log(directorPercent);*/ 
-
-
-
-var result = [],
+let result = [],
     i, l = Math.min(directorList.length, porcentaje.length);
-    
 for (i = 0; i < l; i++) {
     result.push(...directorList, ...porcentaje);
 }
@@ -279,41 +282,27 @@ const directorArr= new Set(result);
 
  console.log(resultFinal);
 
- /* function getPercent(a){
-  new Chart (a, {
-            type:'pie',
-            data: {
-                labels: director,
-                datasets: [{
-                  data: porcentaje,
-                  backgroundColor: [
-                  'rgb(255, 171, 193, 0.9)',
-                  'rgb(156, 170, 242, 0.9)',
-                  'rgb(255, 202, 203, 0.9)',
-                  'rgb(149, 203, 255, 0.9)',
-                  'rgb(255, 244, 209, 0.9)',
-                  'rgb(180, 229, 255, 0.9)'
-                    ],
-                },
-              ]},
-              options: {
-                responsive: true,
-                plugins: {
-                  legend: {
-                    position: 'top',
-                  },
-                  title: {
-                    position: 'bottom',
-                    display: true,
-                    text: `Isao Takahata: 25%
-                    Hayao Miyazaki: 45%
-                    Gorō Miyazaki:10%
-                    Hiromasa Yonebayashi:10%
-                    Hiroyuki Morita: 5%
-                    Yoshifumi Kondō: 5%`
-                  }
-                }
-              },
-        })
-      }
-    getPercent(mySecondChart); */
+ const directorFinalResult = document.getElementById("filmsStatistics");
+ const directorTable =`
+ <div>
+ <p> Find below the movies statistics by directors: </p>
+ <table class="stadisticsTable">
+ <tr><th> DIRECTOR </th> <th> PERCENT (%)</th></tr>
+ <tr><td >${resultFinal[0]}</td><td >${resultFinal[6]+ "%"} </td></tr>
+ <tr><td >${resultFinal[1]}</td><td >${resultFinal[7]+ "%"} </td></tr>
+ <tr><td >${resultFinal[2]}</td><td >${resultFinal[8]+ "%"} </td></tr>
+ <tr><td >${resultFinal[3]}</td><td >${resultFinal[8]+ "%"} </td></tr>
+ <tr><td >${resultFinal[4]}</td><td >${resultFinal[9]+ "%"} </td></tr>
+ <tr><td >${resultFinal[5]}</td><td >${resultFinal[9]+ "%"} </td></tr>
+  </table>
+ </div>
+ `;
+ directorFinalResult.innerHTML=directorTable;
+ 
+ //const myDirectorChart= document.getElementById("filmsStadistics").getContext("2d");
+ 
+ /* let directorPercent = directorList + porcentaje;
+ 
+ console.log(directorPercent);*/
+
+
