@@ -106,6 +106,8 @@ const pageThree=document.getElementById("pageThree");
 pageThree.style.display="";
 const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
+const pageFour=document.getElementById("pageFour");
+pageFour.style.display="none";
 })
 
 
@@ -276,10 +278,10 @@ const directorArr= new Set(result);
  <tr><th> DIRECTOR </th> <th> PERCENT (%)</th></tr>
  <tr><td >${resultFinal[0]}</td><td >${resultFinal[6]+ "%"} </td></tr>
  <tr><td >${resultFinal[1]}</td><td >${resultFinal[7]+ "%"} </td></tr>
- <tr><td >${resultFinal[2]}</td><td >${resultFinal[8]+ "%"} </td></tr>
- <tr><td >${resultFinal[3]}</td><td >${resultFinal[8]+ "%"} </td></tr>
  <tr><td >${resultFinal[4]}</td><td >${resultFinal[9]+ "%"} </td></tr>
  <tr><td >${resultFinal[5]}</td><td >${resultFinal[9]+ "%"} </td></tr>
+ <tr><td >${resultFinal[2]}</td><td >${resultFinal[8]+ "%"} </td></tr>
+ <tr><td >${resultFinal[3]}</td><td >${resultFinal[8]+ "%"} </td></tr>
   </table>
  </div>
  `;
