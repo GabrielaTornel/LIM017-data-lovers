@@ -28,8 +28,8 @@ const pageFour=document.getElementById("pageFour");
 pageFour.style.display="none";
 })
 
-let backIntro = document.getElementById("backIntro");
-backIntro.addEventListener("click",()=>{
+let backHome= document.getElementById("backHome");
+backHome.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="";
   const pageTwo=document.getElementById("pageTwo");
@@ -57,8 +57,8 @@ const pageFour=document.getElementById("pageFour");
 pageFour.style.display="none";
 })
 
-let backIntro2 = document.getElementById("backIntro2");
-backIntro2.addEventListener("click",()=>{
+let backHome2 = document.getElementById("backHome2");
+backHome2.addEventListener("click",()=>{
   const pageOne=document.getElementById("pageOne");
   pageOne.style.display="";
   const pageTwo=document.getElementById("pageTwo");
@@ -90,8 +90,8 @@ pageThree.style.display="none";
 const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
-let backIntro3 = document.getElementById("backIntro3");
-backIntro3.addEventListener("click",()=>{
+let backHome3 = document.getElementById("backHome3");
+backHome3.addEventListener("click",()=>{
   const pageFour=document.getElementById("pageFour");
   pageFour.style.display="none";
   const pageTwo=document.getElementById("pageTwo");
@@ -113,12 +113,13 @@ const pageOne=document.getElementById("pageOne");
 pageOne.style.display="none";
 })
 
+//nombramos variable a nuestra data general
 let filmsData = data.films;
 
-//nombrando nuestra lista recorrida
+//estructurando nuestra lista recorrida
 const totalDataFilms = (listData) =>{
   let resultMovies = "";
-//recorriendo nuestro array
+//recorriendo nuestro array e ingresando vista html en forma de tarjetas
 listData.forEach((filmsData) => {
   const dataCard = `
   <div class="cardContainer">
@@ -144,9 +145,12 @@ listData.forEach((filmsData) => {
     document.getElementById("filmsInfo").innerHTML= resultMovies;
   }
   totalDataFilms(filmsData);
+
  /* console.log(sortMovies(myArray, "title", "A-Z"))
   console.log(sortMovies(myArray, "release_date" , "sortDateAsc"))*/
- document.getElementById("selectSortAZ").addEventListener("change", (e) => {
+ 
+ //reflejamos funcion sort 
+  document.getElementById("selectSortAZ").addEventListener("change", (e) => {
   const selectedIndex = e.currentTarget.value;
   //debugger
   // sortBy.options[sortBy.selectedIndex].value;

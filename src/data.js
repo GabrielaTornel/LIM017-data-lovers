@@ -54,7 +54,3 @@ export const  computeStats = (dataFilms, nameDirector) =>{
 };
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 33c9151474f9942b22f6a32dd1b1cd315d2a5808
