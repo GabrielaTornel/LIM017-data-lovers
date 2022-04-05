@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Studio Ghibli </title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header><img src="img/header1.gif" width="100%" alt="totorolindo"></header>
+    <br>
+    <div class="container">
+      <div  id="pageOne" class="info">
+        <table>
+        <tr>
+          <td>
+          <h1>Studio Ghibli and its magic</h1>
+          <p>Studio Ghibli is a Japanese animation film studio headquartered in Koganei, Tokyo.It is best known for its animated feature films, and has also produced several short subjects, television commercials, and two television films.It was founded in 1985 by animated film directors Isao Takahata and Hayao Miyazaki. </p>
+          <p>The name "Ghibli" was chosen by Miyazaki from the Italian noun ghibli (also used in English), based on the Libyan Arabic name for hot desert wind (قبلي, 'ghiblī'), the idea being the studio would "blow a new wind through the anime industry".</p>
+          <p>Studio Ghibli films have garnered numerous awards and critical acclaim from film critics and animation specialists around the world.The last four films released by Studio Ghibli, have earned the studio four consecutive Academy Award nominations for Best Animated Feature Film.</p>
+          <p>Due to its worldwide recognition,the Studio opened a museum, which is located in Inokashira Park in Mitaka, a western city of Tokyo, Japan.</p>
+          </td>
+          <td>
+          <img class="img-responsive" src="img/hayaoImg.png" alt="HayaoMiyasaki" width="700px">
+          </td>
+      </tr>
+      </table>
+      <div class="btnFilmsInfo" >
+        <button id="btnMoreInf">Movies information </button>
+      </div>
+      </div>
+      <div id="pageTwo" style="display:none" class="pageTwo">
+      <h1>Connect to the Studio Ghibli magic by its movies</h1>
+      <div class="btnIntro">
+        <button id="btnPeople">Movie Characters</button>
+        <button id="btnStatistics">Statistics</button>
+        <button id="backHome">Back to Home</button>
+      </div>
+      <br>
+      <div class="boxSelect">
+        <select id="selectSortAZ" class="sortClass">
+          <option value="empty" disabled selected>Order movies by</option>
+          <option value="A-Z">A-Z </option>
+          <option value="Z-A">Z-A </option>
+          <option value="sortDateAsc">Older to newer </option>
+          <option value="sortDateDes">Newer to older</option>
+          </select>
+      </div>
+      <div id="filmsInfo"></div>
+      </div>
+      <div id="pageThree" style="display:none" class="pageThree">
+      <div class="btnIntro">
+        <button id="btnMoreInf2">Movies information </button>
+        <button id="btnStatistics2">Statistics</button>
+        <button id="backHome2">Back to Home</button>
+      </div><br>
+      <div class="boxSelect">
+      <select id="selectGender" class="selectGenderXY">
+        <option value="empty" disabled selected>People by gender</option>
+        <option value="001">Male </option>
+        <option value="002">Female</option>
+        <option value="003">Not defined </option>
+        <option value="004">Unknown (Possible Male)</option>
+        </select>
+      </div>
+      <div id="filmsPeopleCard">
+      </div>
+  </div>
+  <div id="pageFour" style="display:none" class="pageFour">
+    <div class="btnIntro">
+      <button id="btnPeople2" >Movie Characters</button>
+      <button id="btnMoreInf3">Movies information </button>
+      <button id="backHome3">Back to Home</button>
+    </div><br>
+    <div class="boxSelect">
+    </div>
+      <div id="filmsStatistics">
+      </div>
+  </div>
+    </div>
+    <script src="main.js" type="module"></script>
+    <br><br>
+    <div class="footer">
+    <footer> Created by Silvia and Gaby ♥ || ©  All rights reserved 2022-Laboratoria </footer>
+    </div>
+    <br>
+  </body>
+</html>

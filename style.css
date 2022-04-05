@@ -1,0 +1,221 @@
+header{
+    display:block;
+    margin:auto;
+}
+body{
+    background-image:url(img/fondott.gif);
+    background-attachment: fixed;
+    background-position:left;
+    margin:0;
+    background-size: cover;
+}
+
+
+ .container{
+    font-size:26px;
+    width: 75%;
+    border-radius: 20px;
+    margin:auto;
+    margin-left: 13% ;
+}
+h1{
+    text-align: center;
+    margin-left: 10%;
+    font-size:60px;
+    color:black;
+    text-shadow:4px 2px 4.5px #cca872;
+    -webkit-text-stroke:1px #cca872;
+}
+@media screen and (max-width: 360px) {
+    h1 {
+      font-size: 25px;
+    }
+}
+
+p{
+    margin: 15px;
+    /*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+}
+.img-responsive{
+    width: 100%;
+    height: auto;
+}
+
+.btnFilmsInfo {
+    display:flex;
+    justify-content:center;
+}
+.btnIntro {
+    display:flex;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+}
+#backHome2 , #backHome {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #A19D7A;
+}
+  
+#backHome2:hover , #backHome:hover{
+    background-color: #A19D7A;
+    color: white;
+}
+  
+#backHome, #backHome2, #backHome3{
+    border-radius: 10px;
+    color:black;
+    cursor: pointer;
+    text-align: center;
+    font-family:" EB Garamond";
+    font-size:20px;
+    padding: 16px 32px;
+    transition-duration: 0.4s;
+    margin:5px;
+}
+#btnPeople, #btnStatistics2, #btnStatistics, #btnMoreInf3, #btnMoreInf2, #btnPeople2{
+    background-color:#437155 ;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 16px 32px;
+    text-align: center;
+    font-family:" EB Garamond";
+    font-size:20px;
+    margin: 5px;
+}
+#btnMoreInf{
+    background-color: #cca872;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding:32px;
+    text-align: center;
+    font-family:" EB Garamond";
+    font-size:30px;
+}
+.cardContainer, .cardContainerPeople{
+    width: auto;
+    height: 500px;
+    display: inline-block;
+}
+.boxSelect{
+    width: 100%;
+    height: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    background:#A19D7A;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.sortClass, .selectGenderXY{
+	display: inline-block;
+	width: 17%;
+    height: 35px;
+    margin-top:2px;
+    margin-left:5px;
+	cursor: pointer;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #ffffff;
+	font-size: 17px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: rgb(0, 0, 0);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+.cardInner{
+    margin: 5px;
+    width: 280px;
+    height: 100%;
+    background:#DC8EB5;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 1px 2px 0 rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.cardContainer:hover .cardInner {
+    transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+.cardFront {
+    background-color:rgba(102, 52, 45, 0.295);
+    color: black;
+}
+
+.cardBack {
+    background-color:#DC8EB5;
+    transform: rotateY(180deg);
+    box-shadow:0 1px 2px 0 rgb(0, 0, 0);
+}
+.poster{
+    width: 200px;
+    border-radius: 3px;
+    margin:10px;
+}
+.posterPeople{
+    width: 200px;
+    height:300px;
+    border-radius: 3px;
+    margin:10px;
+}
+.filmsTitle{
+    font-size:20px;
+	color: #000000c5;
+    text-align: center;
+    margin: 3px;
+    font-weight: 30;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.filmsYear{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+}
+.cardTextBack{
+    text-align: center;
+    font-size:16.5px;
+    color:black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 15px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    font: black;
+    font-family: "EB Garamond";
+    font-size: 20px;
+    width:100%;
+    font-weight: 200;
+    bottom:0;
+}
+
+.stadisticsTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  table, th, td {
+    border: 1px solid;
+    text-align:center;
+    padding:5px;
+  }
+
+
+
+
