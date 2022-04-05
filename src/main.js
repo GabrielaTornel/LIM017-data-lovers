@@ -1,6 +1,6 @@
 import {sortMovies , filterByGender, computeStats} from "./data.js";
 import data from "./data/ghibli/ghibli.js";
-console.log (computeStats);
+//console.log (computeStats);
 
 
 //console.log (sortMovies)
@@ -264,9 +264,10 @@ for (i = 0; i < l; i++) {
 }
 
 
+// eslint-disable-next-line no-undef
 const directorArr= new Set(result);
  let resultFinal = [...directorArr];
- console.log(resultFinal);
+//console.log(resultFinal);
 
  const directorFinalResult = document.getElementById("filmsStatistics");
  const directorTable =`
