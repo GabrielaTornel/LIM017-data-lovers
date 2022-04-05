@@ -13,10 +13,10 @@ Quiero: saber más del Studio y visualizar el listado ordenado de todas sus pel�
 Para informarme y acceder a la variedad de películas producidas por el estudio.
 
 Criterio De aceptación
--Un resumen breve del estudio Ghibli para llamar la atención del usuario.
--Mostrar el listado general de  las películas en formato tarjeta.
--Landing page sea web responsive.
--Aplicar formato visualmente entendible para el usuario.
+- Un resumen breve del estudio Ghibli para llamar la atención del usuario.
+- Mostrar el listado general de  las películas en formato tarjeta.
+- Landing page sea web responsive.
+- Aplicar formato visualmente entendible para el usuario.
 
 
    # Historia 2
@@ -25,9 +25,9 @@ Quiero: Ordenar películas por fecha de lanzamiento
 Para: Acceder a las películas más recientes
 
 Criterios de aceptación
--Las películas se ordenan por fecha de lanzamiento .
--Aplicar formato visualmente entendible para el usuario.
--Al clickear “ordenar por” se muestran películas con el parámetro seleccionado orden de fechas más recientes a más antiguas(Newer to older) y viceversa (Older to newer).
+- Las películas se ordenan por fecha de lanzamiento .
+- Aplicar formato visualmente entendible para el usuario.
+- Al clickear “ordenar por” se muestran películas con el parámetro seleccionado orden de fechas más recientes a más antiguas(Newer to older) y viceversa (Older to newer).
 
 
 
@@ -38,9 +38,9 @@ Para: identificar en este caso por género.
 
 Criterios de aceptación.
 
--Crear un espacio para agregar selector por  géneros
--Ejecutar filtros correctamente para que solo se  muestren solo personajes del género seleccionado.(Female, Male, NA , Unknown)
--Aplicar formato visualmente entendible para el usuario..
+- Crear un espacio para agregar selector por  géneros
+- Ejecutar filtros correctamente para que solo se  muestren solo personajes del género seleccionado.(Female, Male, NA , Unknown)
+- Aplicar formato visualmente entendible para el usuario..
 
 
  
@@ -53,10 +53,11 @@ Criterios de aceptación.
  
 # Prototipo de alta fidelidad
 En el link abajo se encuentra el prototipo final trabajado en Canvas:
-![page-1]()
-![page-2]()
-![page-3]()
-![page-4]()
+![page-1](https://github.com/7SilviaT/LIM017-data-lovers/blob/main/src/img/Page1.jpg?raw=true)
+![page-2](https://github.com/7SilviaT/LIM017-data-lovers/blob/main/src/img/page%202.jpg?raw=true)
+![page-3](https://github.com/7SilviaT/LIM017-data-lovers/blob/main/src/img/page3.jpg?raw=true)
+![page-4](https://github.com/7SilviaT/LIM017-data-lovers/blob/main/src/img/page%204.jpg?raw=true)
+
 
 
 Testeos de usabilidad
@@ -70,7 +71,9 @@ Se realizaron testeos a un margen de 10 usuarios y se fueron añadiendo los camb
 -Agregar pequeña descripción en las tarjetas de personajes (solo parte frontal).
 
 ## 4.Implementación de la Interfaz de Usuario (HTML/CSS/JS)
-El demo del proyecto final (formato video) se muestra en link abajo: (https://www.loom.com/share/3d254a50ed194ace80f7477bae14aec5)
+El demo del proyecto final (formato video) se muestra en link abajo: 
+
+*[Demo-video](https://www.loom.com/share/3d254a50ed194ace80f7477bae14aec5)
 
 La data general de películas se muestra en forma de tarjetas (efecto flip card).El usuario filtra u ordena información a través de botones u otros recursos que se implementan en la página.
 Finalmente la página responde dinámicamente al formato web o móvil y se realiza el diseño con paleta de colores cálidos.
