@@ -1,18 +1,18 @@
 export const sortMovies = (dataFilms, sortBy, sortOrder) => {
   let orderSelectF = [];
-        /* lo siguiente ordena según el titulo, dividiendose en ascendente(true) y descendente(false) */
+        /* lo siguiente ordena según el titulo, dividiendose en ascendente y descendente */
+        //cuando mi parametro sea titulo
         if (sortBy === "title") {
           // ordena de forma ascendente
           if (sortOrder === "A-Z"){
-              //aplicamos slice para que no modifique el array original y asi tenerlos sin orden por si quiere sacar el orden.  El sort hace el trabajo de filtrar ascendente o descendente
               orderSelectF= dataFilms.sort(function(x, y) {
-                if (x.title > y.title) return 1;
-                if (y.title === x.title) return 0;
-                return -1;
+                if (x.title > y.title) return 1; //==> cuando mi xTitle sea mayor que mi Ytitle le correre un espacio
+                if (y.title === x.title) return 0; //==> cuando mi xTitle igual que mi Ytitle no hare nada 
+                return -1; //==> cuando mi xTitle igual que mi Ytitle no hare nada  correre un espacio hacia atras
               });
+              // ordena de forma descendente
           } else {
-            orderSelectF = dataFilms.sort(function(x, y) { // ordena de forma descendente
-              //aplicamos slice para que no modifique el array original y asi tenerlos sin orden por si quiere sacar el orden. El sort hace el trabajo de filtrar ascendente o descendente
+            orderSelectF = dataFilms.sort(function(x, y) {
               if (y.title > x.title) return 1;
               if (y.title === x.title) return 0;
               return -1;
@@ -37,7 +37,7 @@ export const sortMovies = (dataFilms, sortBy, sortOrder) => {
 return orderSelectF;
 }
 
-
+//usando funcion filtro sintaxis 
 export const filterByGender = function(dataPeople, genderData){
 const filterData= dataPeople.filter(element => element.gender === genderData);
 return filterData;
@@ -52,3 +52,5 @@ export const  computeStats = (dataFilms, nameDirector) =>{
     const percent = Math.round((count / dataFilms.length)*100);
   return percent;
 };
+
+
